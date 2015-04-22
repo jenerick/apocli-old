@@ -19,6 +19,12 @@ bin/$(EXE) : $(OBJECTS)
 obj/%.o: src/%.cpp
 	g++ $(OPT) -c $< -o $@
 
+$(BIN_DIR):
+	mkdir -p $(BIN_DIR)
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
 #obj/actor.o : src/actor.cpp
 #	g++ $(OPT) -c src/actor.cpp
 #
