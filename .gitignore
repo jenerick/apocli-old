@@ -1,0 +1,14 @@
+# vim swp files
+*.swp
+
+# Debug folder (visual studio)
+Debug/
+
+# binary folder
+bin/
+
+# object folder
+obj/
+
+# visual studio files
+apocli.*
