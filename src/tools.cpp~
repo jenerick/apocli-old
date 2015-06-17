@@ -2,7 +2,8 @@
 
 int Tools::Location::getX(const int nX, const int nD)
 {
-	int rValue, tD;
+	int rValue,
+	    tD;
 
 	tD = nD / 2;
 

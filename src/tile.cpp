@@ -18,18 +18,15 @@ char Tile::getPrintChar()
 	}
 }
 
-int Tile::getPlanesZ() { return zPlanes; };
-int Tile::getCoordinateX() { return xCoordinate; };
-int Tile::getCoordinateY() { return yCoordinate; };
-int Tile::getIdentifier()
-{
-	return ID_DIRT__;
-}
+int Tile::getPlanesZ()        { return zPlanes;     };
+int Tile::getCoordinateX()    { return xCoordinate; };
+int Tile::getCoordinateY()    { return yCoordinate; };
+int Tile::getIdentifier()     { return ID_DIRT__;   };
 
-void Tile::setActor(Actor * nActor) { actor = nActor; };
-void Tile::remActor() { actor = NULL; };
-void Tile::setCoordinateX(const int nX) { xCoordinate = nX; };
-void Tile::setCoordinateY(const int nY) { yCoordinate = nY; };
+void Tile::setActor(Actor * nActor)        { actor = nActor;   };
+void Tile::remActor()                      { actor = NULL;     };
+void Tile::setCoordinateX(const int nX)    { xCoordinate = nX; };
+void Tile::setCoordinateY(const int nY)    { yCoordinate = nY; };
 
 Tile::Tile(const int nX, const int nY)
 {

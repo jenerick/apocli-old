@@ -50,30 +50,22 @@ Game::Game(Display * nDisplay)
 #ifdef DEBUG
 	std::cout << "Loaded world into game context." << std::endl;
 #endif
-
 	xDimension = world->getDimensionX();
 	yDimension = world->getDimensionY();
-
 	display->passNameFirst(actor->getNameFirst());
 	display->passNameLast(actor->getNameLast());
 	display->passHealth(actor->getHealth());
 	display->passStrength(actor->getStrength());
-
 	xCenter = Tools::Location::rosX(0, xDimension);
 	yCenter = Tools::Location::rosY(0, yDimension);
-
 	actor->setLocationX(xCenter); 
 	actor->setLocationY(yCenter);
-
 	curX = actor->getLocationX(); 
 	curY = actor->getLocationY();
-
 	lstX = curX;
 	lstY = curY;
-
 	rosX = Tools::Location::rosX(0, xDimension);
 	rosY = Tools::Location::rosY(0, yDimension);
-
 	isRunning = true;
 
 #ifdef DEBUG
@@ -83,22 +75,17 @@ Game::Game(Display * nDisplay)
 	while (isRunning) {
 		curX = actor->getLocationX();
 		curY = actor->getLocationY();
-
 		world->remActor(lstX, lstY);
 		world->setActor(actor, curX, curY);
-
 #ifdef DEBUG
 		std::cout << "Set the actor!" << std::endl;
 #endif
-
 		rosX = Tools::Location::getX(curX, xDimension);
 		rosY = Tools::Location::getY(curY, yDimension);
-
 		display->passHealth(actor->getHealth());
 		display->passStrength(actor->getStrength());
 		display->passLocX(rosX);
 		display->passLocY(rosY);
-
 		lstX = curX;
 		lstY = curY;
 
