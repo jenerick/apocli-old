@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <unistd.h>
+// #include <unistd.h>
 
 #include "../src/tile.h"
 #include "../src/tools.h"
@@ -35,7 +35,7 @@ int main(int argc, char** argv)
 		std::cin >> sFirst;
 		if (sFirst.size() >= 10) {
 			std::cout << "Name is too long!" << std::endl;
-			sleep(1);
+			// sleep(1);
 		} else {
 			isChoosingFirst = false;
 		}
@@ -92,7 +92,7 @@ int main(int argc, char** argv)
 		}
 
 		std::cout << std::endl;
-		sleep(1);
+		// sleep(1);
 	}
 
 	return 0;
