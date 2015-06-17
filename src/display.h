@@ -11,45 +11,36 @@ class Display {
 		const char
 			*line[2];
 
-		Tile    *tileBuff[25][25];
+		Tile
+			*tileBuff[25][25];
 
-		int	viewX,
-			viewY,
-			viewPosX,
-			viewPosY,
-			lineCount;
+		int	viewX,		viewY,
+			viewPosX,	viewPosY;
+
+		int lineCount;
 
 		UI	*user_interface;
 	public:
 		const char
 			getTileCharacter(const int dX, const int dY);
 
-		int	getViewPosX(),
-			getViewPosY(),
-			getViewPortX(),
-			getViewPortY();
+		int	getViewPosX(),	getViewPosY(),
+			getViewPortX(),	getViewPortY();
 
-		void	passNameFirst(const char * nFirst),
-			passNameLast(const char * nLast),
-			passHealth(const int nHealth),
-			passStrength(const int nStrength),
-			doSendTile(Tile *nTile),
-			doSendLine(const char * nLine),
-			doBreak(),
-			doRecieve(),
-			doPrint(),
-			setViewPosX(const int nX),
-			setViewPosY(const int nY),
-			setViewPortX(const int nX),
-			setViewPortY(const int nY),
-			setTileBuffer(Tile *nV, const int dX, const int dY),
-			passLocX(const int nX),
-			passLocY(const int nY),
-			clearTileBuffer();
+		void
+			passNameFirst(const char * nFirst),						passNameLast(const char * nLast),
+			passHealth(const int nHealth),							passStrength(const int nStrength),
+			doSendTile(Tile *nTile),								doSendLine(const char * nLine),
+			doBreak(), doRecieve(),									doPrint(),
+			setViewPosX(const int nX),								setViewPosY(const int nY),
+			setViewPortX(const int nX),								setViewPortY(const int nY),
+			setTileBuffer(Tile *nV, const int dX, const int dY),	clearTileBuffer(),
+			passLocX(const int nX),									passLocY(const int nY);
 
 			Display(const int dID, const int nViewX, const int nViewY);
 
-		Tile*	getTileBuffer(int, int);
+		Tile*
+			getTileBuffer(int, int);
 };
 
 #endif

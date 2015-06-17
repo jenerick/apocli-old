@@ -11,7 +11,7 @@ const char Display::getTileCharacter(const int dX, const int dY)
 	Tile *tempTile = getTileBuffer(dX, dY);
 
 	if (!tempTile->getIsActor()) {
-		switch (!tempTile->getIdentifier()) {
+		switch (tempTile->getIdentifier()) {
 			case ID_DIRT__:
 			return '.';
 			break;

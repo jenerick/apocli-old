@@ -3,13 +3,13 @@
 
 bool Tile::getIsActor()
 {
-	if (!actor) { return false; } else { return true; }
+	if (!actor) return false;
+		else return true;
 }
 
 char Tile::getPrintChar()
 {
-	int actPlane,
-	    objPlane;
+	int actPlane, objPlane;
 
 	if (!actor) {
 		return '.';
@@ -23,7 +23,7 @@ int Tile::getCoordinateX() { return xCoordinate; };
 int Tile::getCoordinateY() { return yCoordinate; };
 int Tile::getIdentifier()
 {
-	return 2;
+	return ID_DIRT__;
 }
 
 void Tile::setActor(Actor * nActor) { actor = nActor; };

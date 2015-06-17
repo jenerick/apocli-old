@@ -6,7 +6,7 @@
 #include <iostream> // DEBUG PURPOSES ONLY!!!
 #endif
 
-#include <unistd.h>
+// #include <unistd.h>
 
 #include "game.h"
 #include "input.h"
@@ -32,16 +32,11 @@ Game::Game(Display * nDisplay)
 {
 	bool	isRunning = false;
 	
-	int	xDimension,
-		yDimension,
-		xCenter,
-		yCenter,
-		curX,
-		curY,
-		lstX,
-		lstY,
-		rosX,
-		rosY;
+	int	xDimension,	yDimension,
+		xCenter,	yCenter,
+		curX,		curY,
+		lstX,		lstY,
+		rosX,		rosY;
 
 	loadDisplay(nDisplay);
 #ifdef DEBUG
@@ -63,10 +58,14 @@ Game::Game(Display * nDisplay)
 	display->passStrength(actor->getStrength());
 	xCenter = Tools::Location::rosX(0, xDimension);
 	yCenter = Tools::Location::rosY(0, yDimension);
-	actor->setLocationX(xCenter); actor->setLocationY(yCenter);
-	curX = actor->getLocationX(); curY = actor->getLocationY();
-	lstX = curX; lstY = curY;
-	rosX = Tools::Location::rosX(0, xDimension); rosY = Tools::Location::rosY(0, yDimension);
+	actor->setLocationX(xCenter); 
+	actor->setLocationY(yCenter);
+	curX = actor->getLocationX(); 
+	curY = actor->getLocationY();
+	lstX = curX;
+	lstY = curY;
+	rosX = Tools::Location::rosX(0, xDimension);
+	rosY = Tools::Location::rosY(0, yDimension);
 	isRunning = true;
 
 #ifdef DEBUG
@@ -74,8 +73,8 @@ Game::Game(Display * nDisplay)
 #endif
 
 	while (isRunning) {
-		curX = actor->getLocationX(); curY = actor->getLocationY();
-
+		curX = actor->getLocationX();
+		curY = actor->getLocationY();
 		world->remActor(lstX, lstY);
 		world->setActor(actor, curX, curY);
 #ifdef DEBUG
@@ -87,7 +86,8 @@ Game::Game(Display * nDisplay)
 		display->passStrength(actor->getStrength());
 		display->passLocX(rosX);
 		display->passLocY(rosY);
-		lstX = curX; lstY = curY;
+		lstX = curX;
+		lstY = curY;
 
 		for (int yCount = 0; yCount <= yDimension - 1; yCount++) {
 			for (int xCount = 0; xCount <= xDimension - 1; xCount++) {
@@ -96,8 +96,9 @@ Game::Game(Display * nDisplay)
 				std::cout << "Sent tile! " << xCount << ", " << yCount << std::endl;
 #endif
 			}
-		} display->doPrint();
-
+		}
+		
+		display->doPrint();
 		input(actor);
 		isRunning = isKill("game");
 	}

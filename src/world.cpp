@@ -61,10 +61,11 @@ WorldLarge::WorldLarge()
 }
 
 // begin class "World"
-bool World::getIsActor(const int dX, const int dY)
+/*bool World::getIsActor(const int dX, const int dY)
 {
 	// dummy function
-}
+	return false;
+} */
 
 char World::getPrintChar(const int dX, const int dY)
 {
