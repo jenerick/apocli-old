@@ -11,7 +11,7 @@ class Actor : public Entity {
 
 		void	setStrength(const int nStrength);
 
-			Actor(const char * nFirst, const char * nLast);
+		Actor(const char * nFirst, const char * nLast);
 };
 
 #endif

@@ -1,9 +1,9 @@
 #include "actor.h"
 #include "identifier.h"
 
-int Actor::getStrength() { return strength; }
+int Actor::getStrength()    { return strength; }
 
-void Actor::setStrength(const int nStrength) { strength = nStrength; }
+void Actor::setStrength(const int nStrength)    { strength = nStrength; }
 
 Actor::Actor(const char * nFirst, const char * nLast)
 {
