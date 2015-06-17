@@ -28,14 +28,14 @@ class Display {
 			getViewPortX(),	getViewPortY();
 
 		void
-			passNameFirst(const char * nFirst),						passNameLast(const char * nLast),
-			passHealth(const int nHealth),							passStrength(const int nStrength),
-			doSendTile(Tile *nTile),								doSendLine(const char * nLine),
-			doBreak(), doRecieve(),									doPrint(),
-			setViewPosX(const int nX),								setViewPosY(const int nY),
-			setViewPortX(const int nX),								setViewPortY(const int nY),
-			setTileBuffer(Tile *nV, const int dX, const int dY),	clearTileBuffer(),
-			passLocX(const int nX),									passLocY(const int nY);
+			passNameFirst(const char * nFirst),                     passNameLast(const char * nLast),
+			passHealth(const int nHealth),                          passStrength(const int nStrength),
+			doSendTile(Tile *nTile),                                doSendLine(const char * nLine),
+			doBreak(), doRecieve(),                                 doPrint(),
+			setViewPosX(const int nX),                              setViewPosY(const int nY),
+			setViewPortX(const int nX),                             setViewPortY(const int nY),
+			setTileBuffer(Tile *nV, const int dX, const int dY),    clearTileBuffer(),
+			passLocX(const int nX),                                 passLocY(const int nY);
 
 			Display(const int dID, const int nViewX, const int nViewY);
 
