@@ -21,7 +21,8 @@ char Tile::getPrintChar()
 int Tile::getPlanesZ()        { return zPlanes;     };
 int Tile::getCoordinateX()    { return xCoordinate; };
 int Tile::getCoordinateY()    { return yCoordinate; };
-int Tile::getIdentifier()     { return ID_DIRT__;   };
+
+tile_type Tile::getIdentifier()     { return TILE_DIRT; };
 
 void Tile::setActor(Actor * nActor)        { actor = nActor;   };
 void Tile::remActor()                      { actor = NULL;     };

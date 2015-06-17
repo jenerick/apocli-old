@@ -6,6 +6,14 @@
 
 #define CONSTANT_PLANES_Z 5
 
+enum tile_type {
+	TILE_DIRT,
+	TILE_GRASS,
+	TILE_STONE,
+	TILE_ACTOR,
+	TILE_NONE
+};
+
 class Tile {
 	private:
 		Actor 	*actor;
@@ -21,7 +29,9 @@ class Tile {
 
 		int	getPlanesZ(),
 			getCoordinateX(),
-			getCoordinateY(),
+			getCoordinateY();
+
+		tile_type
 			getIdentifier();
 
 		void	setActor(Actor * nActor),

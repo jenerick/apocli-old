@@ -12,13 +12,13 @@ const char Display::getTileCharacter(const int dX, const int dY)
 
 	if (!tempTile->getIsActor()) {
 		switch (tempTile->getIdentifier()) {
-			case ID_DIRT__:
+			case TILE_DIRT:
 			return '.';
 			break;
-			case ID_GRASS__:
+			case TILE_GRASS:
 			return '"';
 			break;
-			case ID_ROCK__:
+			case TILE_STONE:
 			return ',';
 			break;
 			default:
@@ -28,8 +28,8 @@ const char Display::getTileCharacter(const int dX, const int dY)
 	} else return '@';
 }
 
-int Display::getViewPortX()    { return viewX; }
-int Display::getViewPortY()    { return viewY; }
+int Display::getViewPortX()    { return viewX;    }
+int Display::getViewPortY()    { return viewY;    }
 int Display::getViewPosX()     { return viewPosX; }
 int Display::getViewPosY()     { return viewPosY; }
 
@@ -43,8 +43,8 @@ Display::Display(const int dID, const int dX, const int dY)
 	lineCount = 0;
 }
 
-void Display::setViewPosX(const int nX)    { viewPosX = nX; }
-void Display::setViewPosY(const int nY)    { viewPosY = nY; }
+void Display::setViewPosX(const int nX)    { viewPosX = nX;    }
+void Display::setViewPosY(const int nY)    { viewPosY = nY;    }
 void Display::doBreak()                    { doSendLine("\n"); }
 
 void Display::doSendTile(Tile *nTile)
@@ -82,15 +82,15 @@ void Display::doRecieve()
 	}
 }
 
-void Display::passNameFirst(const char * nFirst)                     { user_interface->passNameFirst(nFirst); }
-void Display::passNameLast(const char * nLast)                       { user_interface->passNameLast(nLast); }
-void Display::passHealth(const int nHealth)                          { user_interface->passHealth(nHealth); }
-void Display::passStrength(const int nStrength)                      { user_interface->passStrength(nStrength); }
-void Display::setViewPortX(const int nX)                             { viewX = nX; }
-void Display::setViewPortY(const int nY)                             { viewY = nY; }
-void Display::passLocX(const int nX)                                 { user_interface->passLocX(nX); }
-void Display::passLocY(const int nY)                                 { user_interface->passLocY(nY); }
-void Display::setTileBuffer(Tile *nV, const int dX, const int dY)    { tileBuff[dX][dY] = nV; }
+void Display::passNameFirst(const char * nFirst)                     { user_interface->passNameFirst(nFirst);   };
+void Display::passNameLast(const char * nLast)                       { user_interface->passNameLast(nLast);     };
+void Display::passHealth(const int nHealth)                          { user_interface->passHealth(nHealth);     };
+void Display::passStrength(const int nStrength)                      { user_interface->passStrength(nStrength); };
+void Display::setViewPortX(const int nX)                             { viewX = nX;                              };
+void Display::setViewPortY(const int nY)                             { viewY = nY;                              };
+void Display::passLocX(const int nX)                                 { user_interface->passLocX(nX);            };
+void Display::passLocY(const int nY)                                 { user_interface->passLocY(nY);            };
+void Display::setTileBuffer(Tile *nV, const int dX, const int dY)    { tileBuff[dX][dY] = nV;                   };
 
 void Display::clearTileBuffer()
 {
