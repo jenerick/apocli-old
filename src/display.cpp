@@ -2,7 +2,6 @@
 
 #include "debug.h"
 #include "display.h"
-#include "identifier.h"
 
 Tile * Display::getTileBuffer(const int dX, const int dY) { return tileBuff[dX][dY]; };
 

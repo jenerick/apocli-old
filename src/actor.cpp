@@ -1,5 +1,4 @@
 #include "actor.h"
-#include "identifier.h"
 
 int Actor::getStrength()    { return strength; }
 
@@ -10,7 +9,7 @@ Actor::Actor(const char * nFirst, const char * nLast)
 	setName("actor");
 	setNameFirst(nFirst);
 	setNameLast(nLast);
-	setIdentifier(ID_ACTOR__);
+	setIdentifier(ID_ACTOR);
 	// setPrintChar('@');
 	setStrength(25);
 }

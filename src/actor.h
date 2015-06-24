@@ -3,6 +3,10 @@
 
 #include "entity.h"
 
+enum actor_t {
+	ID_ACTOR
+};
+
 class Actor : public Entity {
 	private:
 		int	strength;

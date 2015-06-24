@@ -1,5 +1,4 @@
 #include "tile.h"
-#include "identifier.h"
 
 bool Tile::getIsActor()
 {
