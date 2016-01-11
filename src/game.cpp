@@ -39,17 +39,8 @@ Game::Game(Display * nDisplay)
 		rosX,		rosY;
 
 	loadDisplay(nDisplay);
-#ifdef DEBUG
-	std::cout << "Loaded display into game context." << std::endl;
-#endif
 	makeActor();
-#ifdef DEBUG
-	std::cout << "Loaded actor into game context." << std::endl;
-#endif
 	world = new World(WORLD_SMALL__);
-#ifdef DEBUG
-	std::cout << "Loaded world into game context." << std::endl;
-#endif
 
 	xDimension = world->getDimensionX();
 	yDimension = world->getDimensionY();
@@ -76,20 +67,12 @@ Game::Game(Display * nDisplay)
 
 	isRunning = true;
 
-#ifdef DEBUG
-	std::cout << "Game loop set, we are ready to go!" << std::endl;
-#endif
-
 	while (isRunning) {
 		curX = actor->getLocationX();
 		curY = actor->getLocationY();
 
 		world->remActor(lstX, lstY);
 		world->setActor(actor, curX, curY);
-
-#ifdef DEBUG
-		std::cout << "Set the actor!" << std::endl;
-#endif
 
 		rosX = Tools::Location::getX(curX, xDimension);
 		rosY = Tools::Location::getY(curY, yDimension);
@@ -105,9 +88,6 @@ Game::Game(Display * nDisplay)
 		for (int yCount = 0; yCount <= yDimension - 1; yCount++) {
 			for (int xCount = 0; xCount <= xDimension - 1; xCount++) {
 				display->doSendTile(world->getTile(xCount, yCount));
-#ifdef DEBUG
-				std::cout << "Sent tile! " << xCount << ", " << yCount << std::endl;
-#endif
 			}
 		}
 		
