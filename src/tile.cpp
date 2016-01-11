@@ -2,8 +2,7 @@
 
 bool Tile::getIsActor()
 {
-	if (!actor) return false;
-		else return true;
+	return ( actor != NULL );
 }
 
 char Tile::getPrintChar()
@@ -23,7 +22,7 @@ int Tile::getCoordinateY()    { return yCoordinate; };
 
 tile_type Tile::getIdentifier()     { return TILE_DIRT; };
 
-void Tile::setActor(Actor * nActor)        { actor = nActor;   };
+void Tile::setActor(Actor *nActor)         { actor = nActor;   };
 void Tile::remActor()                      { actor = NULL;     };
 void Tile::setCoordinateX(const int nX)    { xCoordinate = nX; };
 void Tile::setCoordinateY(const int nY)    { yCoordinate = nY; };
@@ -34,4 +33,5 @@ Tile::Tile(const int nX, const int nY)
 	queueFilled = 0;
 	setCoordinateX(nX);
 	setCoordinateY(nY);
+	remActor();
 }

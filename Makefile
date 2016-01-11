@@ -3,27 +3,30 @@
 EXE=apocli
 DEP=actor display entity game input main object signal terrain tile tools ui world
 
-SRC_DIR=src/
-BIN_DIR=bin/
-OBJ_DIR=obj/
+SRC_DIR=src
+BIN_DIR=bin
+OBJ_DIR=obj
 
-OBJECTS=$(addprefix $(OBJ_DIR), $(addsuffix .o, $(DEP)))
+OBJECTS=$(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(DEP)))
 
 OPT=-march=native -Wall -O2
 
 all : $(SRC_DIR) $(BIN_DIR) $(OBJ_DIR) bin/$(EXE)
 
-bin/$(EXE) : $(OBJECTS)
+$(BIN_DIR)/$(EXE) : $(OBJECTS)
 	g++ -o bin/$(EXE) $(OBJECTS)
 
-obj/%.o: src/%.cpp
+$(OBJ_DIR)/%.o: src/%.cpp
 	g++ $(OPT) -c $< -o $@
 
+$(SRC_DIR):
+	mkdir $(SRC_DIR)
+
 $(BIN_DIR):
-	mkdir -p $(BIN_DIR)
+	mkdir $(BIN_DIR)
 
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+	mkdir $(OBJ_DIR)
 
 #obj/actor.o : src/actor.cpp
 #	g++ $(OPT) -c src/actor.cpp
